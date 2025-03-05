@@ -32,7 +32,7 @@ public class SecurityConfig {
                 // Configurar autorización de endpoints
                 .authorizeHttpRequests(authorize -> authorize
                         // Endpoints públicos
-                        .requestMatchers("/api/products").permitAll() // Permitir acceso público temporalmente
+                        .requestMatchers("/api/products").hasRole("STORE") // Permitir acceso público temporalmente
                         .requestMatchers("/api/products/**").hasRole("STORE") // Solo usuarios con rol STORE pueden acceder
                         .anyRequest().authenticated()
                 )
