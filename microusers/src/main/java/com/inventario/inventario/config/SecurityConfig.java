@@ -53,7 +53,7 @@ public class SecurityConfig {
 
                         // Endpoints protegidos por rol
                         .requestMatchers("/api/roles/**").hasRole("ADMIN") // Solo administradores pueden acceder
-                        .requestMatchers("/api/users").hasAnyRole("ADMIN", "USER") // Administradores y usuarios pueden acceder
+                        .requestMatchers("/api/users").hasAnyRole("ADMIN", "STORE") // Administradores y usuarios pueden acceder
 
                         // Cualquier otro endpoint requiere autenticación
                         .anyRequest().authenticated()
