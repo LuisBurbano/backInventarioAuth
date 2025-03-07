@@ -15,6 +15,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "*")
 public class OAuth2Controller {
 
     @Autowired
@@ -30,7 +31,7 @@ public class OAuth2Controller {
 
             // Llamar al microservicio de usuarios para validar credenciales
             ResponseEntity<ValidateResponse> response = restTemplate.postForEntity(
-                    "http://localhost:8001/api/users/validate",
+                    "http://20.169.174.150:8001/api/users/validate",
                     authRequest,
                     ValidateResponse.class
             );
